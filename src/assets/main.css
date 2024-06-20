@@ -1,0 +1,16 @@
+@import './base.css';
+@import './variables/variables.css';
+
+main {
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none;
+}
