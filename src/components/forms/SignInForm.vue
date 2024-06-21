@@ -1,8 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router';
-import SubmitButton from '../formElements/SubmitButton.vue';
-import ButtonGhost from '../formElements/ButtonGhost.vue';
-import InputComponent from '../formElements/InputComponent.vue';
+import SubmitButton from "../formElements/SubmitButton.vue";
+import ButtonGhost from "../formElements/ButtonGhost.vue";
+import InputComponent from "../formElements/InputComponent.vue";
+import { RouterLink } from "vue-router";
 
 defineProps({
   title: {
@@ -12,24 +12,28 @@ defineProps({
   link: {
     type: String,
     required: true,
-  }
+  },
 });
 </script>
 
 <template>
-  <form action="/signin">
-    <div class="flex flex-col">
+  <form action="/signin" class="max-w-lg sm:max-w-none">
+    <div class="flex flex-col gap-8">
       <InputComponent type="text" name="signin[email]" label="Email" />
-      <InputComponent type="password" name="signin[password]" label="Password" />
-    </div>
+      <InputComponent
+        type="password"
+        name="signin[password]"
+        label="Password"
+      />
 
-    <div class="flex justify-between">
-      <ButtonGhost title="Forgot Password?" link="/forgot-password" />
-      <SubmitButton title="Sign In" />
+      <div
+        class="flex justify-between items-center sm:flex-col-reverse sm:gap-4"
+      >
+        <RouterLink to="/reset_password">Forget Password?</RouterLink>
+        <SubmitButton title="Sign In" />
+      </div>
     </div>
   </form>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
