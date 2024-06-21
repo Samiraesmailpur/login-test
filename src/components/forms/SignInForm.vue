@@ -17,7 +17,7 @@ defineProps({
 </script>
 
 <template>
-  <form action="/signin" class="max-w-lg sm:max-w-none">
+  <form action="/signin" class="w-full">
     <div class="flex flex-col gap-8">
       <InputComponent type="text" name="signin[email]" label="Email" />
       <InputComponent

@@ -29,10 +29,12 @@ import SignInForm from "../components/forms/SignInForm.vue";
       </aside>
 
       <div
-        class="w-3/5 p-20 pb-64 sm:px-14 sm:mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20"
+        class="w-3/5 p-20 pb-64 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20"
       >
-        <h1 class="text-3xl mb-12 font-semibold">Sign In</h1>
-        <SignInForm />
+        <div class="w-6/12 mx-auto md:w-full sm:w-full flex items-center justify-center flex-col">
+          <h1 class="text-3xl mb-12 font-semibold self-start">Sign In</h1>
+          <SignInForm />
+        </div>
       </div>
     </section>
   </main>
