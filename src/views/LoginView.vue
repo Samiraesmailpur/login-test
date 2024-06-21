@@ -7,14 +7,14 @@ import SignInForm from "../components/forms/SignInForm.vue";
   <main>
     <section class="flex sm:flex-col w-full h-full h-screen items-end">
       <aside
-        class="flex w-2/5 flex-col flex-1 justify-between w-50 pt-16 px-8 pb-64 h-full sm:px-6 sm:w-full sm:pb-20"
+        class="flex w-2/5 flex-col flex-1 justify-between w-50 pt-16 px-10 pb-72 h-full sm:px-6 sm:w-full sm:pb-20"
       >
         <div>
-          <h1 class="text-5xl mb-6 text-white sm:text-3xl">
+          <h1 class="text-6xl mb-6 text-white md:text-4xl">
             Welcome to the new hiring journey
           </h1>
 
-          <h3 class="text-xl text-white sm:text-xl">
+          <h3 class="text-xl text-white md:text-xl">
             Please use your credentials to log in
           </h3>
         </div>
@@ -29,7 +29,7 @@ import SignInForm from "../components/forms/SignInForm.vue";
       </aside>
 
       <div
-        class="w-3/5 p-20 pb-64 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20"
+        class="w-3/5 p-20 pb-72 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20"
       >
         <div class="w-6/12 mx-auto md:w-full sm:w-full flex items-center justify-center flex-col">
           <h1 class="text-3xl mb-12 font-semibold self-start">Sign In</h1>
