@@ -19,7 +19,7 @@ const removeQuestion = () => {
 </script>
 
 <template>
-  <div class="flex justify-between items-center pb-4 border-b border-solid border-gray-200">
+  <div class="flex justify-between items-center py-4 border-y border-solid border-gray-200">
     <span>Questions:</span>
 
     <div class="flex gap-2">

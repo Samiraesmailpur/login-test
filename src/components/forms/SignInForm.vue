@@ -17,5 +17,3 @@ import PrimaryButton from "../formElements/PrimaryButton.vue";
     </div>
   </form>
 </template>
-
-<style scoped></style>

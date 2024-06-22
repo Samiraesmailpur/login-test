@@ -33,8 +33,8 @@ const openDialog = () => {
   <dialog ref="dialogRef"
           id="addInterviewDialog"
           class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-sm w-full max-w-3xl sm:h-screen">
-    <div class="flex justify-between items-center p-4">
-      <h2 class="text-lg font-semibold">Add Interview</h2>
+    <div class="flex justify-between items-center p-4 mb-4 border-b border-solid border-gray-200">
+      <h2 class="text-lg font-semibold">Adda new Interview</h2>
 
       <div class="flex">
         <PrimaryButton title="Settings" class="px-5" />
@@ -44,9 +44,9 @@ const openDialog = () => {
       </div>
     </div>
 
-    <div class="px-4 py-3">
+    <div class="px-4 py-3 border-b border-solid border-gray-200">
       <form action="/interviews" method="post" id="addInterviewForm"
-            class="flex flex-col gap-8">
+            class="flex flex-col gap-8 pb-12">
         <InputComponent name="topic" label="Interview's topic" auto-focus />
 
         <QuestionsList />
