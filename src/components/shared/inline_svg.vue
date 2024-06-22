@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent } from 'vue';
+import { defineAsyncComponent, ref, watchEffect } from 'vue';
 
 const props = defineProps({
   src: {
@@ -8,11 +8,18 @@ const props = defineProps({
   }
 });
 
-const svg = defineAsyncComponent(() =>
-  import(`/src/assets/images/icons/${props.src}.svg`)
-);
+const svgRef = ref(null)
+
+watchEffect(() => {
+  svgRef.value = defineAsyncComponent(() =>
+    import(`/src/assets/images/icons/${props.src}.svg`)
+  );
+});
+// svgRef.value = defineAsyncComponent(() =>
+//   import(`/src/assets/images/icons/${props.src}.svg`)
+// );
 </script>
 
 <template>
-  <component :is="svg" class="fill-current" />
+  <component :is="svgRef" class="fill-current" />
 </template>
