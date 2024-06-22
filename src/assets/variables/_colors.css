@@ -1,8 +1,9 @@
 :root {
-  --primary-color: #e6513e;
-  --primary-color-ghost: rgba(#e6513e, 0.5);
-  --secondary-color: rgb(240, 126, 39);
-  --secondary-color-ghost: rgba(#f07e27, 0.5);
-  --primary-gradient: linear-gradient(var(--secondary-color) 0%, #f8a551 100%);
-  --primary-gradient-180: linear-gradient(180deg, var(--secondary-color) 0%, #f8a551 100%);
+  --white-color: #fff;
+  --primary-color: rgb(240, 126, 39);
+  --primary-color-dark: #de6b0e;
+  --secondary-color: #e6513e;
+  --secondary-color-dark: #c23c2a;
+  --primary-gradient: linear-gradient(var(--primary-color) 0%, #f8a551 100%);
+  --primary-gradient-180: linear-gradient(180deg, var(--primary-color) 0%, #f8a551 100%);
 }

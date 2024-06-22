@@ -1,6 +1,7 @@
 <script setup>
 import PrimaryButton from "../components/formElements/PrimaryButton.vue";
 import SignInForm from "../components/forms/SignInForm.vue";
+import AddInterviewDialog from "../components/dialogs/AddInterviewDialog.vue";
 </script>
 
 <template>
@@ -24,8 +25,10 @@ import SignInForm from "../components/forms/SignInForm.vue";
             If you are not a member, please
           </h3>
 
-          <PrimaryButton title="sign up" link="/signup" />
+          <PrimaryButton title="sign up" class="red" link="#" id="open-dialog" />
         </div>
+
+        <AddInterviewDialog triggerId="open-dialog" />
       </aside>
 
       <div
