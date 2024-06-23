@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     [vue(),
       svgLoader({
+        defaultImport: "component",
         svgoConfig: {
           plugins: [
             {

@@ -15,9 +15,6 @@ watchEffect(() => {
     import(`/src/assets/images/icons/${props.src}.svg`)
   );
 });
-// svgRef.value = defineAsyncComponent(() =>
-//   import(`/src/assets/images/icons/${props.src}.svg`)
-// );
 </script>
 
 <template>
