@@ -12,7 +12,7 @@ const svgRef = ref(null)
 
 watchEffect(() => {
   svgRef.value = defineAsyncComponent(() =>
-    import(`/src/assets/images/icons/${props.src}.svg`)
+    import(`/src/assets/images/icons/${props.src}.svg?component`)
   );
 });
 </script>
