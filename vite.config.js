@@ -8,21 +8,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [
     [vue(),
-      svgLoader({
-        defaultImport: "component",
-        svgoConfig: {
-          plugins: [
-            {
-              name: "preset-default",
-              params: {
-                overrides: {
-                  removeViewBox: false, // Ensure the viewBox attribute is preserved
-                },
-              },
-            }
-          ],
-        },
-      }),
+      svgLoader(),
     ]
   ],
   resolve: {
@@ -31,3 +17,18 @@ export default defineConfig({
     }
   }
 })
+// {
+//   defaultImport: "component",
+//   svgoConfig: {
+//     plugins: [
+//       {
+//         name: "preset-default",
+//         params: {
+//           overrides: {
+//             removeViewBox: false, // Ensure the viewBox attribute is preserved
+//           },
+//         },
+//       }
+//     ],
+//   },
+// }

@@ -34,7 +34,7 @@ const openDialog = () => {
           id="addInterviewDialog"
           class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-sm w-full max-w-3xl sm:h-screen">
     <div class="flex justify-between items-center p-4 mb-4 border-b border-solid border-gray-200">
-      <h2 class="text-lg font-semibold">Adda new Interview</h2>
+      <h2 class="text-lg font-semibold">Add a new Interview</h2>
 
       <div class="flex">
         <PrimaryButton title="Settings" class="px-5" />
