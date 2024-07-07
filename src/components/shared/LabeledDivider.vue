@@ -1,10 +1,13 @@
-<script setup>
-defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
-});
+<script>
+export default {
+  name: "LabeledDivider",
+  props: {
+    label: {
+      type: String,
+      required: true,
+    },
+  }
+};
 </script>
 
 <template>

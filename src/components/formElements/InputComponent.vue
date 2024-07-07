@@ -1,15 +1,18 @@
-<script setup>
-defineProps({
-  type: {
-    type: String,
-    required: true,
+<script>
+export default {
+  name: "InputComponent",
+  porps: {
+    type: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    label: String,
   },
-  name: {
-    type: String,
-    required: true,
-  },
-  label: String,
-});
+};
 
 </script>
 
@@ -26,6 +29,5 @@ defineProps({
 
   <slot v-if="$slots.append" name="append"></slot>
 </div>
-
 
 </template>

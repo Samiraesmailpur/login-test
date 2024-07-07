@@ -1,21 +1,29 @@
-<script setup>
-import { ref } from 'vue';
+<script>
 import draggable from 'vuedraggable';
 import ButtonGhost from '@/components/formElements/ButtonGhost.vue';
 import InputComponent from '@/components/formElements/InputComponent.vue';
 import PrimaryButton from '@/components/formElements/PrimaryButton.vue';
 
-const questions = ref([{ id: 0 }]);
+export default {
+  name: "QuestionsList",
+  data() {
+    return {
+      questions: [{ id: 0 }],
+    };
+  },
+  methods: {
+    addQuestion() {
+      const id = this.questions.length;
+      this.questions.push({ id });
+    },
+    removeQuestion() {
+      if (this.questions.length === 1) return;
+      this.questions.pop();
+    },
+  },
+  components: { draggable, ButtonGhost, InputComponent, PrimaryButton },
+}
 
-const addQuestion = () => {
-  const id = questions.value.length;
-  questions.value.push({ id });
-};
-
-const removeQuestion = () => {
-  if (questions.value.length == 1) return;
-  questions.value.pop();
-};
 </script>
 
 <template>
@@ -27,7 +35,7 @@ const removeQuestion = () => {
         <inline_svg src="magic-wand" width="24" height="24"></inline_svg>
       </PrimaryButton>
 
-      <ButtonGhost @click="addQuestion()" class="px-6 py-2">
+      <ButtonGhost @click="addQuestion" class="px-6 py-2">
         <inline_svg src="plus-circled" width="24" height="24"></inline_svg>
       </ButtonGhost>
     </div>
@@ -48,7 +56,7 @@ const removeQuestion = () => {
               <inline_svg src="gears" width="24" height="24"></inline_svg>
             </ButtonGhost>
 
-            <ButtonGhost v-if="index != 0" @click="removeQuestion()" class="red px-6 w-auto">
+            <ButtonGhost v-if="index != 0" @click="removeQuestion" class="red px-6 w-auto">
               <inline_svg src="plus-circled" width="24" height="24" class="rotate-45"></inline_svg>
             </ButtonGhost>
           </div>

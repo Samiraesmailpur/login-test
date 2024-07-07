@@ -1,14 +1,11 @@
-<script setup>
-import { RouterLink } from "vue-router";
-
-defineProps({
-  title: String,
-  link: {
-    type: String,
-    required: false,
-    default: "#",
-  },
-});
+<script>
+export default {
+  name: "PrimaryButton",
+  props: {
+    title: String,
+    link: { type: String, default: "#" },
+  }
+};
 </script>
 
 <template>

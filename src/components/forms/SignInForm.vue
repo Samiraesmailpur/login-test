@@ -1,7 +1,11 @@
 <script setup>
 import InputComponent from "../formElements/InputComponent.vue";
-import { RouterLink } from "vue-router";
 import PrimaryButton from "../formElements/PrimaryButton.vue";
+
+export default {
+  name: "SignInForm",
+  components: { InputComponent, PrimaryButton },
+}
 </script>
 
 <template>
