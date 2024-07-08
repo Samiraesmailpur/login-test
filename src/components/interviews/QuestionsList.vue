@@ -1,8 +1,8 @@
 <script>
-import draggable from 'vuedraggable';
-import ButtonGhost from '@/components/formElements/ButtonGhost.vue';
-import InputComponent from '@/components/formElements/InputComponent.vue';
-import PrimaryButton from '@/components/formElements/PrimaryButton.vue';
+import draggable from "vuedraggable";
+import ButtonGhost from "@/components/formElements/ButtonGhost.vue";
+import InputComponent from "@/components/formElements/InputComponent.vue";
+import PrimaryButton from "@/components/formElements/PrimaryButton.vue";
 
 export default {
   name: "QuestionsList",
@@ -22,12 +22,13 @@ export default {
     },
   },
   components: { draggable, ButtonGhost, InputComponent, PrimaryButton },
-}
-
+};
 </script>
 
 <template>
-  <div class="flex justify-between items-center py-4 border-y border-solid border-gray-200">
+  <div
+    class="flex justify-between items-center py-4 border-y border-solid border-gray-200"
+  >
     <span>Questions:</span>
 
     <div class="flex gap-2">
@@ -46,7 +47,12 @@ export default {
       <InputComponent type="text" name="questions[]">
         <template #prepend>
           <div class="flex items-center justify-center pr-2 cursor-pointer">
-            <inline_svg src="arrows-vertical" width="16" height="16" class="fill-gray-400"></inline_svg>
+            <inline_svg
+              src="arrows-vertical"
+              width="16"
+              height="16"
+              class="fill-gray-400"
+            ></inline_svg>
           </div>
         </template>
 
@@ -56,8 +62,17 @@ export default {
               <inline_svg src="gears" width="24" height="24"></inline_svg>
             </ButtonGhost>
 
-            <ButtonGhost v-if="index != 0" @click="removeQuestion" class="red px-6 w-auto">
-              <inline_svg src="plus-circled" width="24" height="24" class="rotate-45"></inline_svg>
+            <ButtonGhost
+              v-if="index != 0"
+              @click="removeQuestion"
+              class="red px-6 w-auto"
+            >
+              <inline_svg
+                src="plus-circled"
+                width="24"
+                height="24"
+                class="rotate-45"
+              ></inline_svg>
             </ButtonGhost>
           </div>
         </template>

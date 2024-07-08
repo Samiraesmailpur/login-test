@@ -9,10 +9,15 @@ import LabeledDivider from "../shared/LabeledDivider.vue";
 
 import AddEmailsDialog from "../dialogs/AddEmailsDialog.vue";
 
-import QuestionsList from "../interviews/QuestionsList.vue"
+import QuestionsList from "../interviews/QuestionsList.vue";
 
 export default {
   name: "InterviewForm",
+  data() {
+    return {
+      candidates: [],
+    };
+  },
   props: {
     title: String,
     dialog: {
@@ -24,12 +29,22 @@ export default {
       default: false,
     },
   },
-  components: { ButtonGhost, PrimaryButton, InputComponent, TextAreaComponent, LabeledDivider, AddEmailsDialog, QuestionsList },
-}
+  components: {
+    ButtonGhost,
+    PrimaryButton,
+    InputComponent,
+    TextAreaComponent,
+    LabeledDivider,
+    AddEmailsDialog,
+    QuestionsList,
+  },
+};
 </script>
 
 <template>
-  <div class="flex justify-between items-center p-4 mb-4 border-b border-solid border-gray-200">
+  <div
+    class="flex justify-between items-center p-4 mb-4 border-b border-solid border-gray-200"
+  >
     <h2 class="text-lg font-semibold">{{ title }}</h2>
 
     <div class="flex">
@@ -41,15 +56,19 @@ export default {
   </div>
 
   <div class="px-4 py-3">
-    <form action="/interviews" method="post" id="addInterviewForm"
-          class="flex flex-col gap-8 pb-12">
+    <form
+      action="/interviews"
+      method="post"
+      id="addInterviewForm"
+      class="flex flex-col gap-8 pb-12"
+    >
       <InputComponent name="topic" label="Interview's topic" auto-focus />
 
       <QuestionsList />
 
       <LabeledDivider label="Link to the interview" />
 
-      <InputComponent name="iterview_url" label="Interview link" >
+      <InputComponent name="iterview_url" label="Interview link">
         <template #append>
           <ButtonGhost class="appended red px-6" title="Save and get URL" />
         </template>
@@ -58,27 +77,37 @@ export default {
       <LabeledDivider label="Send an email" />
 
       <div v-if="emailDialog" class="">
-        <div class="flex gap-4">
+        <div class="flex gap-2 mb-2.5">
           <span>Will be sent to</span>
-          <span ref="candidatesAmountRef"></span>
+          <span ref="candidatesAmountRef" class="px-1.5 bg-gray-200 rounded">{{
+            candidates.length
+          }}</span>
           <span>candidates</span>
         </div>
 
         <div class="flex w-full justify-between">
-          <ButtonGhost title="Add candidate's email addresses" id="openEmailsDialog"/>
-          <ButtonGhost title="Send by Email"/>
+          <ButtonGhost title="Add candidate's email addresses" id="openEmailsDialog" />
+          <ButtonGhost title="Send by Email" />
         </div>
 
-        <AddEmailsDialog candidatesRef="candidatesAmountRef" triggerId="openEmailsDialog" />
+        <AddEmailsDialog
+          @add-candidates="candidates = $event"
+          candidatesRef="candidatesAmountRef"
+          triggerId="openEmailsDialog"
+        />
       </div>
 
       <div v-else class="flex justify-between gap-4">
-        <TextAreaComponent name="interview_date" label="Racipients emails. One in a row" class="w-full max-w-prose" />
+        <TextAreaComponent
+          name="interview_date"
+          label="Racipients emails. One in a row"
+          class="w-full max-w-prose"
+        />
 
         <div class="flex flex-col gap-4">
           <span class="whitespace-nowrap">Email language: EN</span>
 
-          <ButtonGhost title="Send Email" class="w-full"/>
+          <ButtonGhost title="Send Email" class="w-full" />
         </div>
       </div>
     </form>
