@@ -1,8 +1,8 @@
 <script>
-import draggable from 'vuedraggable';
-import ButtonGhost from '@/components/formElements/ButtonGhost.vue';
-import InputComponent from '@/components/formElements/InputComponent.vue';
-import PrimaryButton from '@/components/formElements/PrimaryButton.vue';
+import draggable from "vuedraggable";
+import ButtonGhost from "@/components/formElements/ButtonGhost.vue";
+import InputComponent from "@/components/formElements/InputComponent.vue";
+import PrimaryButton from "@/components/formElements/PrimaryButton.vue";
 
 export default {
   name: "QuestionsList",
@@ -22,8 +22,7 @@ export default {
     },
   },
   components: { draggable, ButtonGhost, InputComponent, PrimaryButton },
-}
-
+};
 </script>
 
 <template>
