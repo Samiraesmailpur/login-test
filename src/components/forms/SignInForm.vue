@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import InputComponent from "../formElements/InputComponent.vue";
 import PrimaryButton from "../formElements/PrimaryButton.vue";
 

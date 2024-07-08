@@ -4,8 +4,8 @@ export default {
   props: {
     title: String,
     link: { type: String, default: "#" },
-  }
-}
+  },
+};
 </script>
 
 <template>
@@ -41,6 +41,26 @@ a:not(.red) {
 a:not(.red):hover {
   color: var(--white-color);
   background-color: var(--primary-color);
+}
+
+a.green {
+  color: var(--green-color);
+  border-color: var(--green-color);
+}
+
+a.green:hover {
+  color: var(--white-color);
+  background-color: var(--green-color);
+}
+
+a.aqua {
+  color: var(--aqua-color);
+  border-color: var(--aqua-color);
+}
+
+a.aqua:hover {
+  color: var(--white-color);
+  background-color: var(--aqua-color);
 }
 
 .appended {
