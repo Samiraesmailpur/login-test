@@ -9,7 +9,7 @@ import AppHeader from "./components/shared/AppHeader.vue";
     <AppHeader />
   </header>
   <main class="flex">
-    <aside>
+    <aside class="sm:hidden">
       <AsideNavigation />
     </aside>
 

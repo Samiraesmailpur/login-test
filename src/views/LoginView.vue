@@ -11,9 +11,7 @@ export default {
 
 <template>
   <section class="flex sm:flex-col w-full h-full h-screen items-end">
-    <aside
-      class="flex w-2/5 flex-col flex-1 justify-between w-50 pt-16 px-10 pb-72 h-full sm:px-6 sm:w-full sm:pb-20"
-    >
+    <aside class="flex w-2/5 flex-col flex-1 justify-between w-50 pt-16 px-10 pb-72 h-full sm:px-6 sm:w-full sm:pb-20">
       <div>
         <h1 class="text-6xl mb-6 text-white md:text-4xl">
           Welcome to the new hiring journey
@@ -35,9 +33,7 @@ export default {
       <AddInterviewDialog triggerId="open-dialog" />
     </aside>
 
-    <div
-      class="w-3/5 p-20 pb-72 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20"
-    >
+    <div class="w-3/5 p-20 pb-72 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20">
       <div class="w-6/12 mx-auto md:w-full sm:w-full flex items-center justify-center flex-col">
         <h1 class="text-3xl mb-12 font-semibold self-start">Sign In</h1>
         <SignInForm />

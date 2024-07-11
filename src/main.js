@@ -5,6 +5,8 @@ import App from "./App.vue";
 import router from "./router";
 import inline_svg from './components/shared/inline_svg.vue';
 import "./index.css";
+import '../node_modules/flowbite-vue/dist/index.css'
+
 
 const app = createApp(App);
 

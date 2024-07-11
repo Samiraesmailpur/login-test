@@ -8,7 +8,7 @@ export default {
   <div class="flex items-center border border-solid rounded-2xl overflow-hidden pr-12 hover:shadow-round">
     <img class="max-w-12 mr-4 " src="/images/talent-mock.jpg" alt="">
 
-    <div class="flex gap-8 items-center jusitfy-between w-full">
+    <div class="flex sm:flex-col gap-8 sm:gap-2 items-center jusitfy-between w-full">
       <div class="flex-grow flex flex-col justify-between cursor-pointer hover:text-primary">
         <h1>{{ response.name }}</h1>
 

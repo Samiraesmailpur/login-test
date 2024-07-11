@@ -10,11 +10,9 @@
   --green-color:  #28a745;
   --aqua-color:#17a2b8;
 
-  --tw-shadow-color: red;
+  --tw-shadow-color: #ff0000;
 
   --status-badge-pending: #d6a779;
   --status-badge-approved: #3195a5;
   --status-badge-executed: #1abc9c;
 }
-
-
