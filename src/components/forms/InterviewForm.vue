@@ -52,7 +52,7 @@ export default {
   </div>
 
   <div class="px-4 py-3">
-    <form action="/interviews" method="post" id="addInterviewForm" class="flex flex-col gap-8 pb-12">
+    <form action="/interviews" method="post" id="addInterviewForm" class="flex flex-col gap-6">
       <InputComponent name="topic" label="Interview's topic" auto-focus />
 
       <QuestionsList />
@@ -67,23 +67,32 @@ export default {
 
       <LabeledDivider label="Send an email" />
 
-      <div v-if="emailDialog" class="">
-        <div class="flex gap-2 mb-2.5">
-          <span>Will be sent to</span>
-          <span ref="candidatesAmountRef" class="px-1.5 bg-gray-200 rounded">
-            {{ candidates.length }}
-          </span>
-          <span>candidates</span>
+      <div v-if="emailDialog" class="pb-6">
+        <div class="flex gap-2 items-center mb-6 sm:flex-col">
+          <div class="flex gap-2 text-sm">
+            <span>Will be sent to</span>
+            <span ref="candidatesAmountRef"
+                  class="px-1.5 rounded"
+                  :class="{ 'bg-lime-600': candidates.length > 0, 'bg-gray-400': candidates.length <= 0 }">
+              {{ candidates.length }}
+            </span>
+            <span>candidates.</span>
+
+          </div>
+
+          <span>Email language:</span>
+          <ButtonGhost title="English" id="openEmailsDialog"
+                        class="text-xs py-1 px-2" />
         </div>
 
-        <div class="flex w-full justify-between sm:flex-col sm:gap-2">
-          <ButtonGhost title="Add candidate's email addresses" id="openEmailsDialog" />
-          <ButtonGhost title="Send by Email" class="sm:w-fit sm:mx-auto"/>
+        <div class="flex w-full justify-between sm:flex-col sm:gap-4">
+          <ButtonGhost title="Add candidate's email addresses" id="openEmailsDialog"
+                       class="text-sm py-2 px-4" />
+          <ButtonGhost title="Send by Email"
+                       class="text-sm py-2 px-4" />
         </div>
 
-        <AddEmailsDialog @add-candidates="candidates = $event"
-                         candidatesRef="candidatesAmountRef"
-                         triggerId="openEmailsDialog" />
+        <AddEmailsDialog @add-candidates="candidates = $event" candidatesRef="candidatesAmountRef" triggerId="openEmailsDialog" />
       </div>
 
       <div v-else class="flex justify-between gap-4">

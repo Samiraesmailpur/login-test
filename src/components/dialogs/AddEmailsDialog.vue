@@ -38,15 +38,17 @@ export default {
 </script>
 
 <template>
-  <dialog ref="dialogRef"
-          class="absolute top-1/2 left-1/2 divide-y -translate-y-1/2 -translate-x-1/2 rounded-sm w-full max-w-xl sm:h-screen">
+  <dialog
+    ref="dialogRef"
+    class="absolute top-1/2 left-1/2 divide-y -translate-y-1/2 -translate-x-1/2 rounded-sm w-full max-w-xl sm:h-screen">
+
     <div class="p-8">
       <h1>Add emails</h1>
     </div>
     <div class="p-8">
       <TextAreaComponent label="Candidates' email addresses. One per line"
                          :textAreaValue="textAreaValue"
-                         @on-input="textAreaValue = $event"/>
+                         @on-input="textAreaValue = $event" />
     </div>
     <div class="p-8">
       <PrimaryButton @click="addCandidates" title="Save" class="w-32" />
