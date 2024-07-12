@@ -12,6 +12,9 @@ export default {
         'primary-dark': '#de6b0e',
         'secondary': '#e6513e',
         'secondary-dark': '#c23c2a',
+        'aqua': "#17a2b8",
+        "red": "#ff0000;"
+  
       },
       boxShadow: {
         'round': '0px 0px 7px 0px rgba(0, 0, 0, 0.25)',
@@ -21,5 +24,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+],
 };

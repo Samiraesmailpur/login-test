@@ -15,15 +15,24 @@ const router = createRouter({
     },
     {
       path: '/talent-acqusition',
-      name: 'home1',
-      component: () => import('../views/HomeView.vue')
+      name: 'talent-acqusition',
+      component: () => import('../views/TalentAcquisitionView.vue')
     },
     {
       path: '/human-resources',
       name: 'home2',
       component: () => import('../views/HomeView.vue')
+    },
+    {
+      path: '/all-responses',
+      name: 'all-responses',
+      component: () => import('../views/AllResponsesView.vue')
     }
   ]
 })
 
 export default router
+
+
+
+

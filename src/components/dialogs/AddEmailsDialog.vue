@@ -9,21 +9,32 @@ export default {
     triggerId: {
       type: String,
       required: true,
-    }
+    },
+  },
+  data() {
+    return {
+      textAreaValue: "",
+      candidateEmails: [],
+    };
   },
   methods: {
     openDialog() {
       this.$refs.dialogRef.showModal();
-    }
+    },
+    addCandidates(event) {
+      this.candidateEmails = this.textAreaValue.split(" ");
+      this.$emit("add-candidates", this.candidateEmails);
+      this.$refs.dialogRef.close();
+    },
   },
   mounted() {
     const triggerElement = document.getElementById(this.triggerId);
     if (triggerElement) {
-      triggerElement.addEventListener('click', this.openDialog);
+      triggerElement.addEventListener("click", this.openDialog);
     }
   },
   components: { ButtonGhost, PrimaryButton, TextAreaComponent },
-}
+};
 </script>
 
 <template>
@@ -33,10 +44,12 @@ export default {
       <h1>Add emails</h1>
     </div>
     <div class="p-8">
-      <TextAreaComponent label="Candidates' email addresses. One per line"/>
+      <TextAreaComponent label="Candidates' email addresses. One per line"
+                         :textAreaValue="textAreaValue"
+                         @on-input="textAreaValue = $event"/>
     </div>
     <div class="p-8">
-      <PrimaryButton title="Save" class="w-32"/>
+      <PrimaryButton @click="addCandidates" title="Save" class="w-32" />
     </div>
   </dialog>
 </template>
