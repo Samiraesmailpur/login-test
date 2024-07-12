@@ -39,7 +39,7 @@ export default {
 <template>
   <div class="input relative cursor-pointer hover:color-gray-700">
     <textarea :name="name" :rows="rows" v-model="value"
-              class="w-full px-3 pt-2 leading-2 border border-solid border-gray-400 hover:border-gray-500"
+              class="w-full px-3 pt-2 leading-2 border border-solid border-gray-400 hover:border-primary focus:border-primary outline-none"
               @input="onInput">
     </textarea>
 

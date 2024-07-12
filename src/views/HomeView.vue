@@ -28,8 +28,8 @@ const responses = [
     status: "Pending",
     likes: 0,
     dislikes: 0,
-  }
-]
+  },
+];
 
 export default {
   name: "HomeView",
@@ -37,9 +37,9 @@ export default {
   data() {
     return {
       responses,
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
 <template>
@@ -51,13 +51,13 @@ export default {
 
     <div class="flex w-full md:flex-col md:w-fit gap-8 py-8">
       <BillboardBox class="flex-1 py-0">
-        <InterviewForm title="Interview questionnaire" emailDialog={{ true }}/>
+        <InterviewForm title="Interview questionnaire" emailDialog="{{ true }}" />
       </BillboardBox>
 
       <BillboardBox class="flex-1 py-0">
         <div class="flex justify-between items-center py-4 mb-4">
           <h2 class="text-lg font-semibold">Last responses</h2>
-          <PrimaryButton title="View all responses" class="px-5" />
+          <PrimaryButton title="View all responses" class="px-5" link="/all-responses" />
         </div>
 
         <div class="flex flex-col gap-4">
@@ -68,5 +68,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
