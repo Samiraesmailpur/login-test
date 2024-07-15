@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div class="flex flex-col gap-4">
-    <div class="border-b border-solid border-gray-200 flex justify-between pb-2.5">
+    <div class="border-b border-solid border-gray-200 flex justify-between items-baseline pb-2.5">
       <div>
         <div class="flex items-center gap-1.5">
           <inline_svg src="filter" width="17" height="17"></inline_svg>

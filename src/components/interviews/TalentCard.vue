@@ -84,7 +84,7 @@ export default {
   z-index: 20;
 }
 
-.backб
+.back,
 .front {
   backface-visibility: hidden;
 }

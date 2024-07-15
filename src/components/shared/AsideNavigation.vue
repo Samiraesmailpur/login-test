@@ -3,7 +3,7 @@ export default {
   name: "AsideNavigation",
   data() {
     return {
-      linkClasses: "flex flex-col items-center justify-center gap-2 px-3 py-6 text-xs relative",
+      linkClasses: "flex flex-col items-center justify-center gap-2 px-3 py-6 text-xs text-center relative",
       linkActiveClasses: 'text-primary fill-primary color-primary before:bg-primary before:h-5/6 before:w-2 before:absolute before:left-0 before:rounded',
       links: [
         {
