@@ -5,12 +5,7 @@ main {
   min-height: 100vh;
 }
 
-button {
-  border: none;
-  outline: none;
-}
-
-input {
+button, input, textarea {
   border: none;
   outline: none;
 }

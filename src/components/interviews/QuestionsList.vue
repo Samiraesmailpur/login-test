@@ -45,7 +45,7 @@ export default {
       <InputComponent type="text" name="questions[]">
         <template #prepend>
           <div class="flex items-center justify-center pr-2 cursor-pointer">
-            <inline_svg src="arrows-vertical" width="16" height="16" class="fill-gray-400"></inline_svg>
+            <inline_svg src="arrows-vertical" width="16" height="16" class="fill-gray-400 hover:fill-primary"></inline_svg>
           </div>
         </template>
 

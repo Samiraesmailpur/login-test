@@ -81,8 +81,7 @@ export default {
           </div>
 
           <span>Email language:</span>
-          <ButtonGhost title="English" id="openEmailsDialog"
-                        class="text-xs py-1 px-2" />
+          <ButtonGhost title="English" class="text-xs py-1 px-2" />
         </div>
 
         <div class="flex w-full justify-between sm:flex-col sm:gap-4">
