@@ -1,5 +1,4 @@
 @import './base.css';
-@import './variables/variables.css';
 
 main {
   min-height: 100vh;

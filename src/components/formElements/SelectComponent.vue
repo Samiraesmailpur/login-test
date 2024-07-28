@@ -39,32 +39,29 @@ export default {
 <template>
   <div class="relative cursor-pointer">
     <div @click="toggleDropdown"
-          class="flex items-center border border-solid border-gray-400 rounded-2xl text-gray-500 py-2 px-3 select-box w-52 h-10"
-          :class="{ 'active': isActive }">
+         class="flex items-center border border-solid border-gray-400 rounded-2xl text-gray-500 py-2 px-3 select-box w-52 h-10"
+         :class="{ 'active': isActive }">
       <span>Order by: {{ selectedValue }}</span>
       <inline_svg class="fill-gray-500" src="arrow-down" width="18" height="18"></inline_svg>
     </div>
-    <ul class="absolute bg-white w-full top-10 left-0" :class="{ 'hidden': !isActive }">
-      <li v-for="option in options"
-          :key="option.value"
-          class="p-3 flex items-center gap-1 "
-          :class="[ option.value === selectedValue ? 'bg-primary' : 'hover:bg-slate-50' ]"
-          @click="handleSelect(option.value)">
-        <inline_svg :class="[ option.value === selectedValue ? 'fill-primary' : 'fill-white' ]"
-                    :src="option.icon"
-                    width="18"
-                    height="18">
-        </inline_svg>
-        <span>{{ option.value }}</span>
-      </li>
-    </ul>
+    <transition name="slide-fade">
+      <ul class="absolute bg-white w-full top-10 left-0 z-20" :class="{ 'hidden': !isActive }">
+        <li v-for="option in options" :key="option.value" class="p-3 flex items-center gap-1 "
+            :class="[ option.value === selectedValue ? 'bg-primary' : 'hover:bg-slate-50' ]"
+            @click="handleSelect(option.value)">
+
+          <inline_svg :class="[ option.value === selectedValue ? 'fill-primary' : 'fill-white' ]" :src="option.icon" width="18" height="18"></inline_svg>
+          <span>{{ option.value }}</span>
+        </li>
+      </ul>
+    </transition>
   </div>
 </template>
 
 <style scoped>
 .select-box:hover,
 .select-box.active {
-  background-color: var(--primary-color);
+  background-color: #f07e27;
   border-color: #fff;
   color: #fff;
   transition: all 200ms;

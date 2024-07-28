@@ -1,8 +1,7 @@
 <script>
 import draggable from "vuedraggable";
-import ButtonGhost from "@/components/formElements/ButtonGhost.vue";
+import Button from "@/components/formElements/Button.vue";
 import InputComponent from "@/components/formElements/InputComponent.vue";
-import PrimaryButton from "@/components/formElements/PrimaryButton.vue";
 
 export default {
   name: "QuestionsList",
@@ -21,7 +20,7 @@ export default {
       this.questions.pop();
     },
   },
-  components: { draggable, ButtonGhost, InputComponent, PrimaryButton },
+  components: { draggable, Button, InputComponent },
 };
 </script>
 
@@ -30,13 +29,13 @@ export default {
     <span>Questions:</span>
 
     <div class="flex gap-2">
-      <PrimaryButton class="px-6 py-2">
+      <Button class="px-6 py-2" kind="primary">
         <inline_svg src="magic-wand" width="24" height="24"></inline_svg>
-      </PrimaryButton>
+      </Button>
 
-      <ButtonGhost @click="addQuestion" class="px-6 py-2">
+      <Button @click="addQuestion" class="px-6 py-2">
         <inline_svg src="plus-circled" width="24" height="24"></inline_svg>
-      </ButtonGhost>
+      </Button>
     </div>
   </div>
 
@@ -51,13 +50,13 @@ export default {
 
         <template #append>
           <div class="flex gap-3">
-            <ButtonGhost class="appended px-6 w-auto">
+            <Button class="appended px-6 w-auto">
               <inline_svg src="gears" width="24" height="24"></inline_svg>
-            </ButtonGhost>
+            </Button>
 
-            <ButtonGhost v-if="index != 0" @click="removeQuestion" class="red px-6 w-auto">
+            <Button v-if="index != 0" @click="removeQuestion" class="px-6 w-auto" kind="ghost-red">
               <inline_svg src="plus-circled" width="24" height="24" class="rotate-45"></inline_svg>
-            </ButtonGhost>
+            </Button>
           </div>
         </template>
       </InputComponent>

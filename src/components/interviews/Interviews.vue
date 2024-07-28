@@ -1,12 +1,12 @@
 <script>
-import ButtonGhost from "../formElements/ButtonGhost.vue";
+import Button from "../formElements/Button.vue";
 import InterviewCard from "../shared/InterviewCard.vue";
-import PrimaryButton from "../formElements/PrimaryButton.vue";
 import AddInterviewDialog from "@/components/dialogs/AddInterviewDialog.vue";
 
 export default {
   name: "Interviews",
-  components: { ButtonGhost, InterviewCard, PrimaryButton, AddInterviewDialog },
+  props: { subtitle: String, required: true },
+  components: { Button, InterviewCard, AddInterviewDialog },
 };
 </script>
 
@@ -15,13 +15,14 @@ export default {
     <div class="border-b border-solid border-gray-200 flex justify-between items-baseline pb-2.5">
       <div>
         <h2 class="text-lg font-semibold">Interviews</h2>
-        <span class="text-xs text-gray-500 font-semibold">Quick start</span>
+        <span class="text-xs text-gray-500 font-semibold">{{ subtitle }}</span>
       </div>
-      <PrimaryButton class="px-6 py-2" id="open-dialog">
+      <Button class="px-6 py-2" id="open-dialog" kind="primary">
         <inline_svg src="plus-circled" width="24" height="24"></inline_svg>
-      </PrimaryButton>
+      </Button>
       <AddInterviewDialog triggerId="open-dialog" />
     </div>
+
     <InterviewCard />
     <InterviewCard />
     <InterviewCard />

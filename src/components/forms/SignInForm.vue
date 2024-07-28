@@ -1,10 +1,10 @@
 <script>
 import InputComponent from "../formElements/InputComponent.vue";
-import PrimaryButton from "../formElements/PrimaryButton.vue";
+import Button from "../formElements/Button.vue";
 
 export default {
   name: "SignInForm",
-  components: { InputComponent, PrimaryButton },
+  components: { InputComponent, Button },
 }
 </script>
 
@@ -16,7 +16,7 @@ export default {
 
       <div class="flex justify-between items-center sm:flex-col-reverse sm:gap-4">
         <RouterLink to="/reset_password">Forget Password?</RouterLink>
-        <PrimaryButton class="px-8" title="Sign In" href="#a" />
+        <Button class="px-8" title="Sign In" href="#a" kind="primary"/>
       </div>
     </div>
   </form>

@@ -7,7 +7,7 @@ import InformationBox from "@/components/shared/InformationBox.vue";
 import StatusBox from "@/components/shared/StatusBox.vue";
 
 export default {
-  name: "TalentAcquisition",
+  name: "HumanResourcesView",
   components: { TalentCard, Interviews, BillboardBox, Workflows, InformationBox, StatusBox },
   data() {
     return {
@@ -22,14 +22,14 @@ export default {
     <div class="flex py-4 gap-8 md:flex-col">
       <div>
         <BillboardBox class="mb-5">
-          <Workflows title="Talent Acquisition"/>
+          <Workflows title=" Employee Assessment"/>
         </BillboardBox>
         <BillboardBox>
-          <Interviews subtitle="Quick start"/>
+          <Interviews subtitle="Corporate Mastery" />
         </BillboardBox>
       </div>
       <div class="flex-1">
-        <InformationBox  workflow="Quick start" interview="Maximizing Your HR Efficiency with Playhunt" />
+        <InformationBox  workflow="Corporate Mastery" interview="Onboarding Assessment" />
         <StatusBox :statuses="statuses" />
       </div>
     </div>
