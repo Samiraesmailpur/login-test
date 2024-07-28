@@ -1,6 +1,5 @@
 <script>
-import ButtonGhost from "../formElements/ButtonGhost.vue";
-import PrimaryButton from "../formElements/PrimaryButton.vue";
+import Button from "../formElements/Button.vue";
 import InputComponent from "../formElements/InputComponent.vue";
 import TextAreaComponent from "../formElements/TextAreaComponent.vue";
 
@@ -28,8 +27,7 @@ export default {
     },
   },
   components: {
-    ButtonGhost,
-    PrimaryButton,
+    Button,
     InputComponent,
     TextAreaComponent,
     LabeledDivider,
@@ -44,7 +42,7 @@ export default {
     <h2 class="text-lg font-semibold">{{ title }}</h2>
 
     <div class="flex">
-      <PrimaryButton title="Settings" class="px-5" />
+      <Button title="Settings" class="px-5" kind="primary" />
       <button v-if="dialog" @click="$props.dialog.close()" class="px-4">
         <inline_svg src="cross" width="12" height="12"></inline_svg>
       </button>
@@ -61,7 +59,7 @@ export default {
 
       <InputComponent name="iterview_url" label="Interview link">
         <template #append>
-          <ButtonGhost class="appended red px-6" title="Save and get URL" />
+          <Button class="appended px-6" kind="ghost-red" title="Save and get URL" />
         </template>
       </InputComponent>
 
@@ -81,13 +79,13 @@ export default {
           </div>
 
           <span>Email language:</span>
-          <ButtonGhost title="English" class="text-xs py-1 px-2" />
+          <Button title="English" class="text-xs py-1 px-2" />
         </div>
 
         <div class="flex w-full justify-between sm:flex-col sm:gap-4">
-          <ButtonGhost title="Add candidate's email addresses" id="openEmailsDialog"
+          <Button title="Add candidate's email addresses" id="openEmailsDialog"
                        class="text-sm py-2 px-4" />
-          <ButtonGhost title="Send by Email"
+          <Button title="Send by Email"
                        class="text-sm py-2 px-4" />
         </div>
 
@@ -100,7 +98,7 @@ export default {
         <div class="flex flex-col gap-4">
           <span class="whitespace-nowrap">Email language: EN</span>
 
-          <ButtonGhost title="Send Email" class="w-full" />
+          <Button title="Send Email" class="w-full" />
         </div>
       </div>
     </form>

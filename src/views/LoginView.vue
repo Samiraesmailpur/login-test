@@ -1,11 +1,11 @@
 <script>
-import PrimaryButton from "../components/formElements/PrimaryButton.vue";
+import Button from "@/components/formElements/Button.vue";
 import SignInForm from "../components/forms/SignInForm.vue";
 import AddInterviewDialog from "../components/dialogs/AddInterviewDialog.vue";
 
 export default {
   name: "LoginView",
-  components: { PrimaryButton, SignInForm, AddInterviewDialog },
+  components: { SignInForm, AddInterviewDialog, Button },
 }
 </script>
 
@@ -27,7 +27,7 @@ export default {
           If you are not a member, please
         </h3>
 
-        <PrimaryButton title="sign up" class="red" link="#" id="open-dialog" />
+        <Button title="sign up" link="#" id="open-dialog" kind="primary-red"/>
       </div>
 
       <AddInterviewDialog triggerId="open-dialog" />
@@ -44,6 +44,6 @@ export default {
 
 <style scoped>
 aside {
-  background: var(--primary-gradient);
+  background: linear-gradient(#f07e27 0%, #f8a551 100%);
 }
 </style>

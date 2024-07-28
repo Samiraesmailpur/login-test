@@ -1,27 +1,36 @@
 <script>
-import ButtonGhost from "../formElements/ButtonGhost.vue";
+import Button from "../formElements/Button.vue";
 
 export default {
   name: "AppHeader",
-  components: { ButtonGhost },
+  props: {
+    isOpen: Boolean,
+  },
+  components: { Button },
+  methods: {
+    toggleAside() {
+      this.$emit('toggle-aside', !this.isOpen);
+
+    }
+  }
 };
 </script>
 
 <template>
   <div class="py-2 px-4 bg-white shadow-round shadow-gray-300">
     <div class="flex w-full justify-between items-center">
-      <ButtonGhost title="English" />
+      <div class="flex items-center gap-1">
+        <inline_svg src="burger" width="30" height="30" @click="toggleAside" class="cursor-pointer burger"></inline_svg>
+        <Button title="English" />
+      </div>
       <RouterLink to="/"> logo </RouterLink>
-
       <div class="flex items-center gap-3.5">
-        <RouterLink to="/" class="text-white bg-green-700 hover:bg-green-800 text-center py-1.5 px-1.5 rounded-lg text-xs font-black sm:hidden">
+        <RouterLink to="/" class="duration-200 text-white bg-emerald-700	hover:bg-emerald-800 text-center py-1.5 px-1.5 rounded-lg text-xs font-black sm:hidden">
           <span class="text-lg font-black">14</span>
           <hr />
           інтерв'ю
         </RouterLink>
-
-        <div class="text-xl font-semibold text-white bg-cyan-500 hover:bg-primary
-                   w-11 h-11 rounded-full flex items-center justify-center cursor-pointer">
+        <div class="text-xl font-semibold text-white bg-cyan-500 hover:bg-primary w-11 h-11 rounded-full flex items-center justify-center cursor-pointer">
           TE
         </div>
       </div>

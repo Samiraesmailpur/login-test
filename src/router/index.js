@@ -27,6 +27,21 @@ const router = createRouter({
       path: '/all-responses',
       name: 'all-responses',
       component: () => import('../views/AllResponsesView.vue')
+    },
+    {
+      path: '/employee-management',
+      name: 'employee-management',
+      component: () => import('../views/HumanResourcesView.vue')
+    },
+    {
+      path: '/employee-engagement',
+      name: 'employee-engagement',
+      component: () => import('../views/HumanResourcesView.vue')
+    },
+    {
+      path: '/employee-assessment',
+      name: 'employee-assessment',
+      component: () => import('../views/HumanResourcesView.vue')
     }
   ]
 })

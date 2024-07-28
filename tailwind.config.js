@@ -13,7 +13,11 @@ export default {
         'secondary': '#e6513e',
         'secondary-dark': '#c23c2a',
         'aqua': "#17a2b8",
-        "red": "#ff0000;"
+        "red": "#ff0000",
+        "green": "#28a745",
+        "status-badge-brown": "#d6a779",
+        "status-badge-aqua": "#3195a5",
+        "status-badge-lime": "#1abc9c",
   
       },
       boxShadow: {

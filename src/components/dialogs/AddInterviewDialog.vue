@@ -1,7 +1,6 @@
 <script>
 import InterviewForm from "../forms/InterviewForm.vue";
-import ButtonGhost from "../formElements/ButtonGhost.vue";
-import PrimaryButton from "../formElements/PrimaryButton.vue";
+import Button from "../formElements/Button.vue";
 
 export default {
   name: "AddInterviewDialog",
@@ -22,7 +21,7 @@ export default {
       triggerElement.addEventListener('click', this.openDialog);
     }
   },
-  components: { InterviewForm, ButtonGhost, PrimaryButton },
+  components: { InterviewForm, Button },
 }
 </script>
 
@@ -33,8 +32,8 @@ export default {
     <InterviewForm title="Add a new Interview" :dialog="this.$refs.dialogRef" />
 
     <div class="flex justify-end gap-4 p-4 border-t border-solid border-gray-200">
-      <ButtonGhost title="Cancel" class="w-32" />
-      <PrimaryButton title="Save" class="w-32"/>
+      <Button title="Cancel" class="w-32" />
+      <Button title="Save" class="w-32" kind="primary"/>
     </div>
   </dialog>
 </template>
