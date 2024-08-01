@@ -33,7 +33,7 @@ export default {
       <RouterLink to="/" class="text-base hover:text-primary duration-200">
          {{ item.name }}
       </RouterLink>
-      <p class="text-xs text-gray-500 font-semibold">{{ item.date }}</p>
+      <p class="text-xs text-gray-500 font-medium">{{ item.date }}</p>
     </div>
 
     <div class="back w-full h-full absolute text-center bg-white rounded-2xl border hover:border-primary duration-200">
@@ -69,7 +69,7 @@ export default {
         </li>
       </ul>
 
-      <inline_svg @click="toggleFlip" src="left-arrow" class="fill-gray-400 absolute top-2.5 right-2.5 hover:fill-black" width="16" height="16"></inline_svg>
+      <inline_svg @click="toggleFlip" src="left-arrow" class="fill-gray-300 absolute top-2.5 right-2.5 hover:fill-black" width="16" height="16"></inline_svg>
     </div>
   </div>
 </template>

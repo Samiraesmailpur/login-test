@@ -38,12 +38,12 @@ export default {
     {{ status }}
   </span>
 
-  <div v-else class="relative after:content-[''] after:absolute after:w-full after:h-px after:bg-gray-200 
+  <div v-else class="relative after:content-[''] after:absolute after:w-full after:h-px after:bg-gray-200
         after:top-2/4 after:left-0 after:-z-10 z-20 mb-3">
-    <h3 class="flex items-center gap-3 w-fit rounded-md p-1 text-white font-semibold text-xs"
-        :class="this.classMap[status]">{{ status.toUpperCase() }}
-      <inline_svg src="zoom-out" class="cursor-pointer" width="20" height="20" v-if="isOpen" @click="isOpen=!isOpen"></inline_svg>
-      <inline_svg src="zoom-in" class="cursor-pointer" width="20" height="20"  v-if="!isOpen" @click="isOpen=!isOpen"></inline_svg>
-    </h3>
+    <span class="flex items-center gap-3 w-fit rounded px-2 py-1 text-white font-medium text-xxs"
+          :class="this.classMap[status]">{{ status.toUpperCase() }}
+      <inline_svg src="zoom-out" class="cursor-pointer" width="16" height="16" v-if="isOpen" @click="isOpen=!isOpen"></inline_svg>
+      <inline_svg src="zoom-in" class="cursor-pointer" width="16" height="16"  v-if="!isOpen" @click="isOpen=!isOpen"></inline_svg>
+    </span>
   </div>
 </template>
