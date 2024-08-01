@@ -30,12 +30,12 @@ export default {
       if (event.target.classList.contains('select-box-input')) return;
       this.isActive = !this.isActive;
     },
-    closeIfClickedOutside(event) {
-      if (!document.querySelector('.select-box').contains(event.target)) {
-        this.isActive = false
-        document.removeEventListener('click', this.closeIfClickedOutside)
-      }
-    },
+    // closeIfClickedOutside(event) {
+    //   if (!document.querySelector('.select-box').contains(event.target)) {
+    //     this.isActive = false
+    //     document.removeEventListener('click', this.closeIfClickedOutside)
+    //   }
+    // },
   },
   watch: {
     isActive(isActive) {

@@ -26,7 +26,7 @@ export default {
     <div class="grid grid-cols-2 gap-1">
       <fwb-tooltip v-for="action in actions" theme="light" :placement="action.toolTipPlacement" :class="action.class">
         <template #trigger>
-          <Button class="w-8 h-6 p-0" :kind="action.btnKind">
+          <Button class="w-8 h-6 py-0 px-0" :kind="action.btnKind">
             <inline_svg class="stroke-green-color" :src="action.icon" width="12" height="12"></inline_svg>
           </Button>
         </template>
