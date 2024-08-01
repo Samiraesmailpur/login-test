@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <RouterLink :to="link" class="flex items-center justify-center p-2 border border-solid rounded-full shrink-0"
+  <RouterLink :to="link" class="flex items-center justify-center text-xs p-3 border border-solid rounded-full shrink-0"
               :class="this.typeMap[kind]">
     {{ title }}
     <slot></slot>

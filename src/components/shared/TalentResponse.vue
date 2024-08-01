@@ -8,7 +8,7 @@ export default {
 
 <template>
   <div class="flex items-center border border-solid rounded-2xl overflow-hidden pr-12 md:pr-2 sm:p-2 hover:shadow-round">
-    <img class="max-w-12 mr-4 sm:h-12 sm:w-12 flex-shrink-0 sm:rounded-full sm:self-start" src="/images/talent-mock.jpg" alt="">
+    <img class="max-w-10 mr-4 sm:h-10 sm:w-10 flex-shrink-0 sm:rounded-full sm:self-start" src="/images/talent-mock.jpg" alt="">
     <div class="flex items-center jusitfy-between w-full sm:flex-col sm:items-start sm:gap-2 sm:flex-wrap">
       <div class="flex-grow flex flex-col justify-between cursor-pointer sm:w-full hover:text-primary">
         <div class="flex gap-2">
@@ -38,12 +38,11 @@ export default {
       </div>
       <div class="flex gap-4 items-center">
         <div>
-          <p class="text-gray-500 ta-left truncate">{{ response.interview }}</p>
-          <p class="text-gray-500 inline">{{ response.date }}</p>
+          <p class="text-gray-500 text-xs ta-left truncate">{{ response.interview }}</p>
+          <p class="text-gray-500 text-xs inline">{{ response.date }}</p>
         </div>
         <StatusBadge :status="response.status" compact class="sm:hidden" />
       </div>
     </div>
   </div>
 </template>
-

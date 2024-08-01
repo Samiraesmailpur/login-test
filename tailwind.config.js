@@ -18,6 +18,7 @@ export default {
         "status-badge-brown": "#d6a779",
         "status-badge-aqua": "#3195a5",
         "status-badge-lime": "#1abc9c",
+        "burgundy": "#ef4444"
   
       },
       boxShadow: {

@@ -13,7 +13,7 @@
         </draggable>
 
         <div v-if="!responses[status].length" class="flex items-center gap-2 mb-8">
-          <inline_svg src="id" width="30" height="30" class="fill-gray-400"></inline_svg>
+          <inline_svg src="id" width="30" height="30" class="fill-gray-300"></inline_svg>
           There are no candidates' responses in this status
         </div>
       </div>

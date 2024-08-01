@@ -30,7 +30,7 @@ export default {
           <hr />
           інтерв'ю
         </RouterLink>
-        <div class="text-xl font-semibold text-white bg-cyan-500 hover:bg-primary w-11 h-11 rounded-full flex items-center justify-center cursor-pointer">
+        <div class="text-xl font-medium text-white bg-cyan-500 hover:bg-primary w-11 h-11 rounded-full flex items-center justify-center cursor-pointer">
           TE
         </div>
       </div>

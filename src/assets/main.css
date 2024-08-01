@@ -8,3 +8,7 @@ button, input, textarea {
   border: none;
   outline: none;
 }
+
+dialog {
+  z-index: 19;
+}

@@ -20,7 +20,7 @@ export default {
 <template>
   <section class="px-8 sm:px-4">
     <div class="flex py-4 gap-8 md:flex-col">
-      <div>
+      <div class="basis-1/4">
         <BillboardBox class="mb-5">
           <Workflows title="Talent Acquisition"/>
         </BillboardBox>

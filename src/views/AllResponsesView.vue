@@ -10,7 +10,7 @@ const responses = [
     name: "John Doe",
     date: "06/13/2024 07:15 am",
     interview: "Frontend Developer",
-    status: "Pending",
+    status: "inbox",
     likes: 3,
     dislikes: 6,
   },
@@ -18,7 +18,7 @@ const responses = [
     name: "Marina Anderson",
     date: "06/13/2024 07:15 am",
     interview: "UI\UX Designer",
-    status: "Approved",
+    status: "approved",
     likes: 1,
     dislikes: 0,
   },
@@ -26,7 +26,23 @@ const responses = [
     name: "Jason Bourne",
     date: "06/13/2024 07:15 am",
     interview: "Project Management Developer",
-    status: "Pending",
+    status: "pending",
+    likes: 0,
+    dislikes: 0,
+  },
+  {
+    name: "Jason Bourne",
+    date: "06/13/2024 07:15 am",
+    interview: "Project Management Developer",
+    status: "feedback preparation",
+    likes: 0,
+    dislikes: 0,
+  },
+  {
+    name: "Jason Bourne",
+    date: "06/13/2024 07:15 am",
+    interview: "Project Management Developer",
+    status: "processed",
     likes: 0,
     dislikes: 0,
   },
@@ -68,11 +84,11 @@ export default {
 
 <template>
   <section class="px-8 sm:px-4">
-    <div class="py-4 flex items-center md:items-start md:flex-col">
+    <div class="py-4 flex items-end md:items-start md:flex-col">
       <h1 class="text-3xl inline">All responses</h1>
       <div>
-        <span class="px-4	border-r-2 border-gray-400 md:pl-0">Quick start</span>
-        <span class="ml-4 text-gray-400">All responses</span>
+        <span class="px-4	border-r-2 border-gray-300 md:pl-0">Quick start</span>
+        <span class="ml-4 text-gray-300">All responses</span>
       </div>
     </div>
     <div class="py-4 mb-4 border-y border-solid border-gray-200">
@@ -90,7 +106,7 @@ export default {
             Showing 1-1 of 1 item.
           </p>
         </div>
-      </transition> 
+      </transition>
     </div>
     <BillboardBox>
       <div class="flex flex-col gap-4">

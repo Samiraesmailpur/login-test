@@ -35,7 +35,7 @@ export default {
 
     <div class="w-3/5 p-20 pb-72 mx-auto sm:max-w-lg sm:w-full sm:px-6 sm:pb-20">
       <div class="w-6/12 mx-auto md:w-full sm:w-full flex items-center justify-center flex-col">
-        <h1 class="text-3xl mb-12 font-semibold self-start">Sign In</h1>
+        <h1 class="text-3xl mb-12 font-medium self-start">Sign In</h1>
         <SignInForm />
       </div>
     </div>
