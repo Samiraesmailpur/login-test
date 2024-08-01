@@ -1,8 +1,8 @@
 <script>
 const items = [
-  { link: "/employee-management", title: "Employee Management", icon: "compass" },
-  { link: "/employee-engagement", title: "Employee Engagement", icon: "energy" },
-  { link: "/employee-assessment", title: "Employee Assessment", icon: "speedometer" },
+  { link: "/human-resources/employee-management", title: "Employee Management", icon: "compass" },
+  { link: "/human-resources/employee-engagement", title: "Employee Engagement", icon: "energy" },
+  { link: "/human-resources/employee-assessment", title: "Employee Assessment", icon: "speedometer" },
 ]
 export default {
   name: "Submenu",

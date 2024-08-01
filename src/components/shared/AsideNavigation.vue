@@ -19,8 +19,8 @@ export default {
         },
         {
           title: "Human Resources",
-          submenu: true,
           link: "/human-resources",
+          submenu: true,
           icon: "people",
         },
       ],
@@ -49,13 +49,13 @@ export default {
 <template>
   <ul class="divide-y border-r h-full w-28  relative z-20 bg-white" :class="{'shadow-2xl': !isOpen}">
     <li v-for="link in links" :key="link.title" >
-      <RouterLink class="" :to="link.link" custom v-slot="{ href, navigate, isActive }">
-        <a v-if="link.submenu" @click="isOpen = !isOpen" class="aside-link cursor-pointer" :class="linkClasses">
+      <RouterLink class="" :to="link.link" custom v-slot="{ href, navigate, isExactActive, isActive }">
+        <a v-if="link.submenu" @click="isOpen = !isOpen" class="aside-link cursor-pointer" :class="[linkClasses, isActive ? linkActiveClasses : '']">
           <inline_svg :src="link.icon" width="32" height="32"></inline_svg>
           <span class="break-words">{{ link.title }}</span>
         </a>
 
-        <a v-else :href="href" @click="navigate" exact :class="[linkClasses, isActive ? linkActiveClasses : '']">
+        <a v-else :href="href" @click="navigate" :class="[linkClasses, isExactActive ? linkActiveClasses : '']">
           <inline_svg :src="link.icon" width="32" height="32"></inline_svg>
           <span class="break-words">{{ link.title }}</span>
         </a>

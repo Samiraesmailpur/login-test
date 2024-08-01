@@ -26,24 +26,26 @@ const router = createRouter({
         {
           path: "/human-resources",
           name: "home2",
-          component: () => import("../views/HomeView.vue")
-        },
-        {
-          path: "/employee-management",
-          name: "employee-management",
-          component: () => import("../views/HumanResourcesView.vue")
-        },
-        {
-          path: "/employee-engagement",
-          name: "employee-engagement",
-          component: () => import("../views/HumanResourcesView.vue")
-        },
-        {
-          path: "/employee-assessment",
-          name: "employee-assessment",
-          component: () => import("../views/HumanResourcesView.vue")
+          component: () => import("../views/HomeView.vue"),
+          children: [
+            {
+              path: "/human-resources/employee-management",
+              name: "employee-management",
+              component: () => import("../views/HumanResourcesView.vue")
+            },
+            {
+              path: "/human-resources/employee-engagement",
+              name: "employee-engagement",
+              component: () => import("../views/HumanResourcesView.vue")
+            },
+            {
+              path: "/human-resources/employee-assessment",
+              name: "employee-assessment",
+              component: () => import("../views/HumanResourcesView.vue")
 
-        }
+            }
+          ]
+        },
       ]
     },
     {
