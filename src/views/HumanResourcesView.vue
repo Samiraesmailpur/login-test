@@ -11,7 +11,7 @@ export default {
   components: { TalentCard, Interviews, BillboardBox, Workflows, InformationBox, StatusBox },
   data() {
     return {
-      statuses: ['Pending', 'Approved', 'Inbox']
+      statuses: ['pending', 'approved', 'inbox']
     };
   }
 };

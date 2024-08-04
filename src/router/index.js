@@ -26,7 +26,6 @@ const router = createRouter({
         {
           path: "/human-resources",
           name: "home2",
-          component: () => import("../views/HomeView.vue"),
           children: [
             {
               path: "/human-resources/employee-management",
