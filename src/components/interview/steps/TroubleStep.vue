@@ -1,9 +1,8 @@
 <script>
-import InputComponent from '@/components/formElements/InputComponent.vue';
 import Button from '@/components/formElements/Button.vue';
 export default {
-  name: "FormStep",
-  components: { InputComponent, Button },
+  name: "TroubleStep",
+  components: { Button },
 }
 </script>
 
@@ -14,12 +13,7 @@ export default {
   </div>
   <div class="py-16 px-14 w-3/5 relative sm:w-full sm:h-full">
     <div>
-      <h2 class="text-3xl font-light mb-12">Step 1. Introduce yourself</h2>
-      <form class="flex flex-col gap-4 mb-14">
-        <InputComponent type="text" label="Full name"/>
-        <InputComponent type="text" label="Email" />
-        <InputComponent type="text" label="Phone"/>
-      </form>
+      <h2 class="text-3xl font-light mb-12">Having trouble with recording</h2>
     </div>
     <Button @click="$emit('next-step')" class="mt-12" kind="primary">
       Next

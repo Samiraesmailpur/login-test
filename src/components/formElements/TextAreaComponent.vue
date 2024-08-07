@@ -41,7 +41,7 @@ export default {
     <textarea :name="name" :rows="rows" v-model="value" @input="onInput"
               class="w-full px-3 pt-2 leading-2 border border-solid border-gray-300 hover:border-primary focus:border-primary shadow-none">
     </textarea>
-    <label v-if="$props.label" class="input label left-2 top-0 -translate-y-2/4 leading-none absolute bg-white p-1 text-gray-500">
+    <label v-if="$props.label" class="input text-xs label left-2 top-0 -translate-y-2/4 leading-none absolute bg-white p-1 text-gray-500">
       {{ label }}
     </label>
   </div>

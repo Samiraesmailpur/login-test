@@ -3,44 +3,45 @@ import WelcomeStep  from "@/components/interview/steps/WelcomeStep.vue";
 import HowItWorksStep  from "@/components/interview/steps/HowItWorksStep.vue";
 import TestRecordingStep  from "@/components/interview/steps/TestRecordingStep.vue";
 import FormStep  from "@/components/interview/steps/FormStep.vue";
-import VideoRecord  from "@/components/interview/steps/VideoRecord.vue";
+import GetReadyStep from "@/components/interview/steps/GetReadyStep.vue";
+import ThankYouStep from "@/components/interview/steps/ThankYouStep.vue";
+import TroubleStep from "@/components/interview/steps/TroubleStep.vue";
 import Button from "@/components/formElements/Button.vue";
-import illustation from "../../assets/images/icons/illustration.jpg"
+import Interview from "@/components/interview/steps/Interview.vue";
 
 export default {
   name: "Stepper",
-  components: { WelcomeStep, HowItWorksStep, Button, VideoRecord },
+  components: { WelcomeStep, HowItWorksStep, Button, GetReadyStep, ThankYouStep, Interview, TroubleStep },
   data() {
     return {
       currentStep: 1,
       animationClass: "",
+      isRecordingStopped: false,
+      isTrouble: false,
       stepper: {
         1: {
-          rightSide: {
-            component: WelcomeStep,
-          } ,
-          leftSide: illustation
+          component: WelcomeStep,
         },
         2: {
-          rightSide: {
-            component: HowItWorksStep,
-            previousBtn: "Welcome"
-          } ,
-          leftSide: illustation
-        },
+          component: HowItWorksStep,
+          },
         3: {
-          rightSide: {
-            component: FormStep,
-            previousBtn:"How it works?"
-          } ,
-          leftSide: illustation
+          component: FormStep,
         },
         4: {
-          rightSide: {
-            component: TestRecordingStep,
-            previousBtn:"Step 1. Introduce yourself"
-          } ,
-          leftSide: VideoRecord
+          component: TestRecordingStep,
+        },
+        5: {
+          component: GetReadyStep,
+        },
+        6: {
+          component: Interview,
+        },
+        7: {
+          component: ThankYouStep,
+        },
+        8: {
+          component: ThankYouStep
         }
       }
     }
@@ -62,43 +63,27 @@ export default {
       this.animationClass = "";
       this.$refs.stepper.removeEventListener("animationend", this.resetStep);
     },
+    troubleStep() {
+      this.isTrouble = true;
+      this.stepper[this.currentStep + 1].component = TroubleStep;
+      this.next()
+    }
   },
 }
 </script>
 
 <template>
-  <div class="flex shadow-round shadow-gray-300 max-w-4xl	sm:max-w-md	my-0 mx-auto sm:flex-col" :class="animationClass" ref="stepper">
-    <div class="w-2/5 left-side sm:w-full sm:max-h-36">
-      <img v-if="typeof stepper[currentStep].leftSide === 'string'"
-           :src="stepper[currentStep].leftSide" alt=""
-           class="w-full h-full sm:max-h-36 object-contain">
-
-      <component v-else :is="stepper[currentStep].leftSide" />
-    </div>
-
-    <div class="py-16 px-14 w-3/5 relative sm:w-full sm:h-full">
-      <component :is="stepper[currentStep].rightSide.component" />
-
-      <Button @click="next"
-              v-show="currentStep < Object.keys(this.stepper).length"
-              class="mt-12"
-              kind="primary">
-        Next
-      </Button>
-      <button @click="previous"
-              v-show="currentStep > 1"
-              class="text-primary flex items-center previous-btn border-primary absolute bottom-3.5 text-xs font-medium">
-
-        <inline_svg class="fill-primary" src="arrow-left" width="9" height="9"></inline_svg>
-
-        {{ stepper[currentStep].rightSide.previousBtn }}
-      </button>
-    </div>
+  <div class="flex shadow-round shadow-gray-300 max-w-5xl	sm:max-w-md	my-0 mx-auto sm:flex-col" :class="animationClass" ref="stepper">
+      <component :is="this.stepper[this.currentStep].component" 
+                 @stop-recording="isRecordingStopped = $event" 
+                 @next-step="next"         
+                 @previous-step="previous" 
+                 @trouble-step="troubleStep">
+      </component>
   </div>
 </template>
 
-
-<style scoped>
+<style>
 .step-right {
   animation: step-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }

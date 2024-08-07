@@ -8,7 +8,8 @@ const typeMap = {
   "ghost-black": "bg-black text-white border-black hover:text-white hover:bg-primary hover:border-primary",
   // PRIMARY BUTTON STYLES
   "primary": "bg-primary text-white hover:bg-primary-dark",
-  "primary-red": "bg-secondary hover:bg-secondary-dark border-secondary text-white"
+  "primary-red": "bg-secondary hover:bg-secondary-dark border-secondary text-white",
+  "primary-aqua": "bg-aqua hover:bg-aqua-dark text-white"
 }
 
 export default {
